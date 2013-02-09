@@ -26,10 +26,34 @@
     </tr>
     <tr>
         <td>
-            Number of People:
+            Maximum Accommodation:
         </td>
         <td>
             ${meal.numOfPeople}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Number of Participants:
+        </td>
+        <td>
+            ${meal.getParticipant().size()}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Number of Paid Participants:
+        </td>
+        <td>
+            ${sumPaid}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Clear for Advance:
+        </td>
+        <td>
+            ${clear}
         </td>
     </tr>
     <tr>
@@ -38,6 +62,14 @@
         </td>
         <td>
             ${meal.theme}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Meal Location:
+        </td>
+        <td>
+            ${meal.location}
         </td>
     </tr>
     <g:each in="${meal.getCourse()}">
@@ -52,10 +84,10 @@
     </g:each>
     <tr>
         <td>
-            Total Estimated Sum:
+            Total Estimated Cost:
         </td>
         <td>
-            ${sum}
+            ${sumCost}
         </td>
     </tr>
     </tbody>
@@ -63,6 +95,10 @@
 
 <g:form name="backMenu" controller="Togetherweeat" action="show">
     <g:submitButton name="submit" value="Back To Main Menu"></g:submitButton>
+</g:form>
+
+<g:form name="CloseMeal" controller="SummaryController" action="closeMeal">
+    <g:submitButton name="submit" value="Close this Feast"></g:submitButton>
 </g:form>
 
 </body>
