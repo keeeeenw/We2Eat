@@ -3,6 +3,13 @@ package togetherweeat
 class Dish {
 
     String name
+    String flavor
+    String type
+    String material
+    String cooking_method
+    String alert
+    String Recipe
+    Float cost
 
     static hasMany = [
             course:Course,
@@ -10,5 +17,7 @@ class Dish {
     ]
 
     static constraints = {
+        course nullable: true;
+        perference nullable: true;
     }
 }

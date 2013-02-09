@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TogetherWeEat.iml" filepath="$PROJECT_DIR$/TogetherWeEat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/TogetherWeEat-grailsPlugins.iml" filepath="$PROJECT_DIR$/TogetherWeEat-grailsPlugins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/We2Eat.iml" filepath="$PROJECT_DIR$/We2Eat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/We2Eat-grailsPlugins.iml" filepath="$PROJECT_DIR$/We2Eat-grailsPlugins.iml" />
     </modules>
   </component>
 </project>

@@ -15,25 +15,27 @@ class Meal {
     double estPrice
 
     static hasOne = [
-            organization:Organization
+            organization: Organization
     ]
 
     static hasMany = [
-            course:Course,
-            participant:Participant
+            course: Course,
+            participant: Participant
     ]
 
     static constraints = {
-            location nullable: true;
-            organization nullable: true;
-            price nullable: true;
-            estPrice nullable: true;
+        location nullable: true;
+        organization nullable: true;
+        price nullable: true;
+        estPrice nullable: true;
     }
 
-    Meal (Date date, int numOfPeople, String location, String theme) {
-            this.date = date
-            this.numOfPeople = numOfPeople
-            this.location = location
-            this.theme = theme
+    Meal(Date date, int numOfPeople, String location, String theme, Course course, Participant participant) {
+        this.date = date
+        this.numOfPeople = numOfPeople
+        this.location = location
+        this.theme = theme
+        this.course = course
+        this.participant = participant
     }
 }

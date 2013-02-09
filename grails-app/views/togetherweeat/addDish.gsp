@@ -9,82 +9,101 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <title>Add Dish</title>
+    <meta name="layout" content="main"/>
+    <title>Add Dish</title>
 </head>
+
 <body>
-<g:form name="menuForm" action="submitChefProfile">
-     <table>
-         <tbody>
-         <tr>
-           <td>
-               <label for="date">Date:</label>
-           </td>
-           <td>
-               <g:datePicker name="date" value="" precision="minute"
-                       years="${(Calendar.getInstance().get(Calendar.YEAR)-70)..Calendar.getInstance().get(Calendar.YEAR)}"/>
-           </td>
-         </tr>
-         <tr>
-           <td>
-               <label for="openTo">Open To:</label>
-           </td>
-           <td>
-               <g:textField name="openTo" value=""/>
-           </td>
-         </tr>
-         <tr>
-           <td>
-               <label for="nopeople">Number Of People:</label>
-           </td>
-           <td>
-               <g:textField name="nopeople" value=""/>
-           </td>
-         </tr>
-         <tr>
-           <td>
-               <label for="host">Provide Space:</label>
-           </td>
-           <td> <g:radioGroup name="host"
-                                         labels="['Yes','No']"
-                                         values="[1,2]">
-                           ${it.label} ${it.radio}
-                </g:radioGroup>
-           </td>
-         </tr>
-         <tr>
-           <td>
-               <label for="theme">Food Theme:</label>
-           </td>
-           <td>
-               <g:textField name="theme" value=""/>
-           </td>
-         </tr>
-         <tr>
-           <td>
-               <label for="location">Location:</label>
-           </td>
-           <td>
-               <g:textField name="location" value=""/>
-           </td>
-         </tr>
-         <tr>
-           <td>
-               <label for="Organization">Organization: </label>
-           </td>
-           <td>
-               <g:textField name="organization" value=""/>
-           </td>
-         </tr>
-         </tbody>
-     <tr>
-       <td>
-       </td>
-       <td>
-           <g:submitButton name="submit" value="Create Feast"></g:submitButton>
-       </td>
-     </tr>
-     </tbody>
-     </table>
+<g:form name="menuForm" controller="DishController" action="submitDishInfo">
+    <table>
+  <tbody>
+  <tr>
+    <td>
+        <label for="name">Name:</label>
+    </td>
+    <td>
+    <g:textField name="name" value=""/>
+    </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="flavor">Flavor:</label>
+        </td>
+        <td>
+            <g:textField name="flavor" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="type">Type:</label>
+        </td>
+        <td>
+            <g:textField name="type" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="material">Material:</label>
+        </td>
+        <td>
+            <g:textField name="material" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="method">Cooking Method:</label>
+        </td>
+        <td>
+            <g:textField name="method" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="alert">Alert:</label>
+        </td>
+        <td>
+            <g:textField name="alert" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="cost">Estimated Cost:</label>
+        </td>
+        <td>
+            <g:textField name="cost" value=""/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="recipe">Recipe:</label>
+        </td>
+        <td>
+            <g:textArea name="recipe" value="" rows="10" cols="40"/>
+        </td>
+    </tr>
+    </tbody>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <g:actionSubmit value="Upload Photo" action="UpdatePhoto"></g:actionSubmit>
+        </td>
+        <td>
+            <g:actionSubmit value="Upload Video" action="UpdateVideo"></g:actionSubmit>
+        </td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <g:submitButton name="submit" value="Create Dish"></g:submitButton>
+        </td>
+        <td>
+            <input type='reset' value='Reset' />
+        </td>
+    </tr>
+    </tbody>
+    </table>
 </g:form>
 </body>
 </html>

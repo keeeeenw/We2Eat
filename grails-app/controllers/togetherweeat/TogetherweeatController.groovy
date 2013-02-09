@@ -5,15 +5,15 @@ class TogetherweeatController {
     def beforeInterceptor = [action: this.&auth]
 
     private auth() {
-    	if (!session.user) {
-    		redirect(controller: "user", action: "login")
-    		return false
-    	}
+        if (!session.user) {
+            redirect(controller: "user", action: "login")
+            return false
+        }
     }
 
     def show() {
-		User u = User.get(session.user)
-        render(view: "show", model: [user:u])
+        User u = User.get(session.user)
+        render(view: "show", model: [user: u])
     }
 
     def createChefProfile() {
@@ -24,7 +24,7 @@ class TogetherweeatController {
         render(view: "createEaterProfile")
     }
 
-    def submitChefProfile(){
+    def submitChefProfile() {
         def meal = new Meal()
         meal.setDate(params.date)
         meal.setNumOfPeople(params.nopeople.toInteger())
@@ -34,40 +34,42 @@ class TogetherweeatController {
         def orgName = params.organization
         def org = Organization.findByName(orgName)
 
-        if (org != null){
+        if (org != null) {
             print("Organization Exists")
         } else {
             org = new Organization()
             org.setName(orgName)
         }
 
-        org.save(failOnError: true, flash:true)
+        org.save(failOnError: true, flash: true)
 
         meal.setOrganization(org)
 
-        meal.save(failOnError: true, flash:true)
+        meal.save(failOnError: true, flash: true)
+
+        session.meal = meal.id;
 
         def chef = new Participant()
-        if (params.host == 1){
+        if (params.host == 1) {
             chef.setHost(true)
         } else {
             chef.setHost(false)
         }
         chef.setRole("chef")
-        chef.isPaid(true)
+        chef.setIsPaid(true)
+        chef.setMeal(meal)
 
-        chef.save()
+        User u = User.get(session.user)
 
-        session.user.setParticipant(chef)
-        session.user.setMeal(meal)
+        chef.setUser(u)
 
+        chef.save(failOnError: true, flash: true)
 
+        render(view: "addDish", model: [meal: meal])
 
-
-        render(view: "addDish", model: [meal:meal])
     }
 
-    def index(){
+    def index() {
         render(view: "show")
     }
 }
