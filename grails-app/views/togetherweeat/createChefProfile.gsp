@@ -11,8 +11,31 @@
 <head>
   <meta name="layout" content="main" />
   <title>Create Menu</title>
+  <style type="text/css">
+      #main {
+          display: inline;
+      }
+
+      #main div{
+          float: left;
+          margin: 50px;
+      }
+
+      #form{
+          width: 550px;
+      }
+
+      #chef{
+          padding-top:100px;
+      }
+  </style>
 </head>
 <body>
+    <div id="main">
+    <div id="chef">
+        <img src="${resource(dir: 'images/Added', file: 'CHEF.png')}" alt="CHEF"/>
+    </div>
+    <div id="form">
     <g:form name="menuForm" action="submitChefProfile">
         <table>
             <tbody>
@@ -79,6 +102,7 @@
         </tbody>
         </table>
     </g:form>
-
+    </div>
+    </div>
 </body>
 </html>

@@ -18,13 +18,28 @@
           padding: 100px;
       }
       #role div:first-child {
-          margin-left: 200px;
+          margin-left: 50px;
 
       }
+
+      #role div:last-child {
+          padding-top:135px;
+      }
+
       #main h1{
           text-align: center;
           font-size: 5em;
+          font: noteworthy;
       }
+
+      #main h2{
+          text-align: center;
+      }
+
+      #iam{
+          margin: 50px;
+      }
+
   </style>
 </head>
 <body>
@@ -38,15 +53,13 @@
       </div>
     </div>
     <div id="main">
-        <h1>I am</h1>
+        <div id="iam"><a href="${g.createLink(controller: 'togetherweeat', action:'createEaterProfile')}"><img src="${resource(dir: 'images/Added', file: 'I_AM.png')}" alt="I_AM"/></a></div>
         <div id="role">
             <div>
-                <a href="${g.createLink(controller: 'togetherweeat', action:'createEaterProfile')}"><img src="${resource(dir: 'images/Added', file: 'EATER.png')}" alt="Easter"/></a>
-                <h2>Eater</h2>
+                <a href="${g.createLink(controller: 'togetherweeat', action:'createEaterProfile')}"><img src="${resource(dir: 'images/Added', file: 'EATER_text.png')}" alt="Easter"/></a>
             </div>
             <div>
-                <a href="${g.createLink(controller: 'togetherweeat', action:'createChefProfile')}"><img src="${resource(dir: 'images/Added', file: 'CHEF.png')}" alt="CHEF"/></a>
-                <h2>Chef</h2>
+                <a href="${g.createLink(controller: 'togetherweeat', action:'createChefProfile')}"><img src="${resource(dir: 'images/Added', file: 'CHEF_text.png')}" alt="CHEF"/></a>
             </div>
         </div>
     </div>
