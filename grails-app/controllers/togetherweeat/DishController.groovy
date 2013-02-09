@@ -42,4 +42,8 @@ class DishController {
 
         render(view: "dish", model:[meal:meal]);
     }
+
+    def submitdishes(){
+        redirect(controller: "Summary", action: "someFunction")
+    }
 }
