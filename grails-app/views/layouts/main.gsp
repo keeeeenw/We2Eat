@@ -16,11 +16,33 @@
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
 		<g:layoutHead/>
 		<r:layoutResources />
+
+        <style type="text/css">
+            #login_hdr{
+                float: right;
+                padding-right: 80px;
+                padding-top: -40px;
+            }
+
+            #login_hdr a{
+                text-decoration: none;
+                color: #000000;
+            }
+
+
+        </style>
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://localhost:8080/TogetherWeEat/"><img src="${resource(dir: 'images/Added', file: 'E2G.png')}" alt="E2G"/></a></div>
-		<g:layoutBody/>
-		<div class="footer" role="contentinfo">Copyright ® 2012 Eat Together - A PineApple Family Production</div>
+		<div id="grailsLogo" role="banner"><a href="http://localhost:8080/TogetherWeEat/"><img src="${resource(dir: 'images/Added', file: 'E2G.png')}" alt="E2G"/></a>
+            <div id="login_hdr">
+                  <a href="http://localhost:8080/TogetherWeEat/User/logout">
+                    Logout
+                  </a>
+            </div>
+        </div>
+
+        <g:layoutBody/>
+		<div class="footer" role="contentinfo">® Copyright 2012 Eat Together - A PineApple Family Production</div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />

@@ -15,15 +15,15 @@
       #role div{
           float: left;
           display: inline;
-          padding: 100px;
+          padding: 50px;
       }
       #role div:first-child {
-          margin-left: 50px;
+          margin-left: 70px;
 
       }
 
       #role div:last-child {
-          padding-top:135px;
+          padding-top:50px;
       }
 
       #main h1{
@@ -37,21 +37,15 @@
       }
 
       #iam{
-          margin: 50px;
+          margin-top: 30px;
+          margin-left: 50px;
+          margin-top: 50px;
+          padding-left: 300px;
       }
 
   </style>
 </head>
 <body>
-    <div id="login_hdr">
-      <div id="hello">
-        <span id="logout">
-          <!--<a href="${g.createLink(controller: 'user', action: 'logout')}">
-            Logout
-          </a> -->
-        </span>
-      </div>
-    </div>
     <div id="main">
         <div id="iam"><a href="${g.createLink(controller: 'togetherweeat', action:'createEaterProfile')}"><img src="${resource(dir: 'images/Added', file: 'I_AM.png')}" alt="I_AM"/></a></div>
         <div id="role">
