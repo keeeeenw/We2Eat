@@ -14,6 +14,8 @@ class Meal {
 
     double estPrice
 
+    boolean open = true;
+
     static hasOne = [
             organization: Organization
     ]
