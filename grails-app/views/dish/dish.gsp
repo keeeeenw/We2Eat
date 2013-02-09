@@ -20,8 +20,7 @@
     <p>${it.dish.name}</p>
 </g:each>
 
-<g:submitButton name="submitDishes" value="Submit"></g:submitButton>
-
+<g:link controller="Dish" action="submitdishes">Submit dishes!</g:link>
 
 <h1>Add New Dish</h1>
 
