@@ -1,0 +1,73 @@
+package togetherweeat
+
+class TogetherweeatController {
+
+    def beforeInterceptor = [action: this.&auth]
+
+    private auth() {
+    	if (!session.user) {
+    		redirect(controller: "user", action: "login")
+    		return false
+    	}
+    }
+
+    def show() {
+		User u = User.get(session.user)
+        render(view: "show", model: [user:u])
+    }
+
+    def createChefProfile() {
+        render(view: "createChefProfile")
+    }
+
+    def createEaterProfile() {
+        render(view: "createEaterProfile")
+    }
+
+    def submitChefProfile(){
+        def meal = new Meal()
+        meal.setDate(params.date)
+        meal.setNumOfPeople(params.nopeople.toInteger())
+        meal.setLocation(params.location)
+        meal.setTheme(params.theme)
+
+        def orgName = params.organization
+        def org = Organization.findByName(orgName)
+
+        if (org != null){
+            print("Organization Exists")
+        } else {
+            org = new Organization()
+            org.setName(orgName)
+        }
+
+        org.save(failOnError: true, flash:true)
+
+        meal.setOrganization(org)
+
+        meal.save(failOnError: true, flash:true)
+
+        def chef = new Participant()
+        if (params.host == 1){
+            chef.setHost(true)
+        } else {
+            chef.setHost(false)
+        }
+        chef.setRole("chef")
+        chef.isPaid(true)
+
+        chef.save()
+
+        session.user.setParticipant(chef)
+        session.user.setMeal(meal)
+
+
+
+
+        render(view: "addDish", model: [meal:meal])
+    }
+
+    def index(){
+        render(view: "show")
+    }
+}
