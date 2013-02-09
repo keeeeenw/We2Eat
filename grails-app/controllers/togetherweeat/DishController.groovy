@@ -11,6 +11,10 @@ class DishController {
         }
     }
 
+    def index(){
+        redirect(action: "show")
+    }
+
     def show() {
         User u = User.get(session.user)
         render(view: "show", model: [user:u])
