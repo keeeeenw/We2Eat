@@ -27,14 +27,6 @@
             </tr>
             <tr>
               <td>
-                  <label for="openTo">Open To:</label>
-              </td>
-              <td>
-                  <g:textField name="openTo" value=""/>
-              </td>
-            </tr>
-            <tr>
-              <td>
                   <label for="nopeople">Number Of People:</label>
               </td>
               <td>
@@ -52,14 +44,6 @@
                    </g:radioGroup>
               </td>
             </tr>
-        <tr>
-          <td>
-              <label for="price">Price:</label>
-          </td>
-          <td>
-              <g:textField name="price" value=""/>
-          </td>
-        </tr>
             <tr>
               <td>
                   <label for="theme">Food Theme:</label>

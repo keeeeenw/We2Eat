@@ -65,7 +65,7 @@ class TogetherweeatController {
 
         chef.save(failOnError: true, flash: true)
 
-        render(view: "addDish", model: [meal: meal])
+        render(view: "../dish/dish", model: [meal: meal])
 
     }
 

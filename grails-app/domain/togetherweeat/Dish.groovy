@@ -9,7 +9,7 @@ class Dish {
     String cooking_method
     String alert
     String Recipe
-    Float cost
+    Double cost
 
     static hasMany = [
             course:Course,

@@ -26,7 +26,7 @@ class DishController {
         dish.setCooking_method(params.method)
         dish.setAlert(params.alert)
         dish.setRecipe(params.recipe)
-        dish.setCost(params.cost.toFloat())
+        dish.setCost(params.cost.toDouble())
         dish.save(failOnError: true, flash: true)
 
         Meal meal = Meal.get(session.meal)
@@ -35,7 +35,11 @@ class DishController {
         course.setMeal(meal);
         course.setDish(dish);
         dish.save(failOnError: true, flash: true)
+        meal.save(failOnError: true, flash: true)
+        course.save(failOnError: true, flash: true)
 
-        render(view: addDish);
+        print(meal.course.size())
+
+        render(view: "dish", model:[meal:meal]);
     }
 }
