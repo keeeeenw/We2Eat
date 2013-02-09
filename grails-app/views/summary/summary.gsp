@@ -60,5 +60,10 @@
     </tr>
     </tbody>
 </table>
+
+<g:form name="backMenu" controller="Togetherweeat" action="show">
+    <g:submitButton name="submit" value="Back To Main Menu"></g:submitButton>
+</g:form>
+
 </body>
 </html>
