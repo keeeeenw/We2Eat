@@ -30,6 +30,13 @@ class Meal {
         estPrice nullable: true;
     }
 
+    Meal(Date date, int numOfPeople, String location, String theme) {
+        this.date = date
+        this.numOfPeople = numOfPeople
+        this.location = location
+        this.theme = theme
+    }
+
     Meal(Date date, int numOfPeople, String location, String theme, Course course, Participant participant) {
         this.date = date
         this.numOfPeople = numOfPeople

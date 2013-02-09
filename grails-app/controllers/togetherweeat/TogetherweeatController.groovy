@@ -21,7 +21,12 @@ class TogetherweeatController {
     }
 
     def createEaterProfile() {
-        render(view: "createEaterProfile")
+        def meals = Meal.all
+        render(view: "createEaterProfile", model: [meals:meals])
+    }
+
+    def submitEaterProfile(){
+
     }
 
     def submitChefProfile() {
